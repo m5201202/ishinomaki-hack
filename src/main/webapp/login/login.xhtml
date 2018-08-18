@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<body>
+<ui:composition template="/templates/layout.xhtml">
+    <ui:define name="page_title">#{res.title_login_pleaseLogin}</ui:define>
+    <ui:define name="content">
+        <h:form prependId="false" method="post" onsubmit="this.action='j_security_check'" name="loginForm" class="form-signin">
+            <!--<h:form method="post" action="#{loginManager.login}" name="loginForm" styleClass="form-signin">-->
+            <h:messages id="messages" showDetail="true"/>
+            <h:panelGrid columns="3" cellspacing="5">
+                <h:outputLabel for="j_username" class="sr-only">#{res.label_login_username}</h:outputLabel>
+                <h:inputText id="j_username" class="form-control" placeholder="#{res.label_login_username}"  required="true" autofocus="true" />
+                <h:message for="j_username"/>
+                <h:outputLabel for="j_password" class="sr-only">#{res.label_login_password}</h:outputLabel>
+                <h:inputSecret id="j_password" class="form-control" placeholder="#{res.label_login_password}" required="true" />
+                <h:message for="j_password"/>
+            </h:panelGrid>
+            <h:commandButton class="btn btn-lg btn-primary btn-block" type="submit" value="#{res.label_login_doLogin}" ajax="false"/>
+            <h:commandButton class="btn btn-block" type="reset" value="#{res.label_login_clear}" />
+        </h:form>
+    </ui:define>
+</ui:composition>
+</body>
+</html>

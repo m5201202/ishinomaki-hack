@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:p="http://xmlns.jcp.org/jsf">
+<ui:insert name="fmetadata"/>
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="#{request.contextPath}/resources/css/foundation.min.css"/>
+    <link rel="stylesheet" type="text/css" href="#{request.contextPath}/resources/css/app.css"/>
+    <link rel="stylesheet" type="text/css" href="#{request.contextPath}/resources/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="#{request.contextPath}/resources/css/data-tables.css"/>
+    <link rel="stylesheet" type="text/css" href="#{request.contextPath}/resources/css/flat-ui-pro.min.css"/>
+    <link rel="stylesheet" type="text/css" href="#{request.contextPath}/resources/css/main.css"/>
+    <!--<ui:insert name="css"/>-->
+    <script src="#{request.contextPath}/resources/javascript/jquery.min.js"></script>
+    <script src="#{request.contextPath}/resources/javascript/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="#{request.contextPath}/resources/javascript/bootstrap.min.js"></script>
+    <ui:insert name="script"/>
+    <title><ui:insert name="title"/></title>
+</h:head>
+
+<body>
+    <f:view>
+        <ui:include src="header.xhtml"/>
+
+        <div id="main" style="margin: 10px 50px">
+            <h2 class="page-header"><ui:insert name="page_title"/></h2>
+            <!--<h:messages/>-->
+            <div id="content">
+                <ui:insert name="content"/>
+            </div>
+        </div>
+
+        <ui:include src="footer.xhtml"/>
+    </f:view>
+    <!--<script src="#{request.contextPath}/resources/javascript/vendor/jquery.js"/>-->
+    <!--<script src="#{request.contextPath}/resources/javascript/vendor/foundation.min.js"/>-->
+    <!--<ui:insert name="script"/>-->
+    <!--<script src="#{request.contextPath}/resources/javascript/app.js"/>-->
+</body>
+</html>

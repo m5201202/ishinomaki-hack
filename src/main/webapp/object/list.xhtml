@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<body>
+<ui:composition template="/templates/layout.xhtml">
+    <ui:define name="page_title">#{res.title_object_list}</ui:define>
+    <ui:define name="content">
+        <a href="add.xhtml">#{res.label_object_add}</a>
+        <table class="table">
+            <tr>
+                <th>#{res.label_object_title}</th>
+                <th>#{res.label_object_createAt}</th>
+                <th>#{res.label_object_updateAt}</th>
+            </tr>
+            <ui:repeat var="row" value="#{objectBean.objectList}">
+                <tr>
+                    <td>
+                        <h:outputText value="#{row.id}"/>
+                    </td>
+                    <td>
+                        <h:outputText value="#{row.name}"/>
+                    </td>
+                    <td>
+                        <h:outputText value="#{row.createDate}">
+                            <f:convertDateTime pattern="yyyy/MM/dd HH:mm:dd" />
+                        </h:outputText>
+                    </td>
+                    <td>
+                        <h:outputText value="#{row.updateDate}">
+                            <f:convertDateTime pattern="yyyy/MM/dd HH:mm:dd" />
+                        </h:outputText>
+                    </td>
+                </tr>
+            </ui:repeat>
+        </table>
+    </ui:define>
+</ui:composition>
+</body>
+</html>

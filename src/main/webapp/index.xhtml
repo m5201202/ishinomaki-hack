@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<body>
+<ui:composition template="/templates/layout.xhtml">
+    <ui:define name="page_title">#{res.title_top}</ui:define>
+    <ui:define name="content">
+        <h1>#{res.label_index_message}</h1>
+        <h:button outcome="/object/list" value="#{res.label_object_list}"/><br/>
+    </ui:define>
+</ui:composition>
+</body>
+</html>

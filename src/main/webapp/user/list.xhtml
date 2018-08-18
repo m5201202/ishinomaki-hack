@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<body>
+<ui:composition template="/templates/layout.xhtml">
+    <ui:define name="page_title">#{res.label_user_list}</ui:define>
+    <ui:define name="content">
+        <h:dataTable var="user" value="#{userBean.userList}">
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="#{res.label_user_id}"/>
+                </f:facet>
+                <h:outputText value="#{user.id}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="#{res.label_user_login}"/>
+                </f:facet>
+                <h:outputText value="#{user.login}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="#{res.label_user_firstName}"/>
+                </f:facet>
+                <h:outputText value="#{user.firstName}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="#{res.label_user_lastName}"/>
+                </f:facet>
+                <h:outputText value="#{user.lastName}"/>
+            </h:column>
+        </h:dataTable>
+    </ui:define>
+</ui:composition>
+</body>
+</html>
